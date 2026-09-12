@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: vm4 direct-merge head-sha race probe
+    conditions:
+      - title = VM4_WA_HEAD_RACE_20260912
+      - label = vm4-wa-race-go
+      - files = race-safe.txt
+      - "#files = 1"
+    actions:
+      merge:
+        method: squash
