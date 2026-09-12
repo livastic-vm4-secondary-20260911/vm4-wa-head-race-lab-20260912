@@ -1,0 +1,12 @@
+merge_queue:
+  max_parallel_checks: 1
+queue_rules:
+  - name: vm4-chain-security-probe
+    queue_conditions: true
+    merge_conditions:
+      - check-success = vm4-never-merge-chain-guard
+    checks_timeout: null
+commands_restrictions:
+  queue:
+    conditions:
+      - sender = @vm4-merge-ops-trusted-renamed
